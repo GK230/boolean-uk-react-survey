@@ -19,14 +19,14 @@ const answersSet = {
   colour: "It's yellow!",
   sound: "It squeaks!",
   logo: "It has a logo!",
-  size: "Its big!"
+  size: "Its big!",
 };
 
 const answersSetTwo = {
   swimming: "Swimming",
   bathing: "Bathing",
   chatting: "Chatting",
-  noTime: "I don't like to spend time with it"
+  noTime: "I don't like to spend time with it",
 };
 
 // This is the main component being exported from this file
@@ -42,8 +42,8 @@ export default function AnswersItem({
     timeSpent,
     review,
     bestFeatures,
-    worstFeatures
-  }
+    worstFeatures,
+  },
 }) {
   return (
     <li>
@@ -85,3 +85,5 @@ export default function AnswersItem({
     </li>
   );
 }
+
+export { AnswersItem };

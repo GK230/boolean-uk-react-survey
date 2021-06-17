@@ -9,3 +9,5 @@ export default function AnswersList({ answersList }) {
     </ul>
   );
 }
+
+export { AnswersList };
