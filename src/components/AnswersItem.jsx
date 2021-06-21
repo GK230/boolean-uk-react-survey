@@ -29,6 +29,7 @@ const answersSetTwo = {
   noTime: "I don't like to spend time with it",
 };
 
+
 // This is the main component being exported from this file
 export default function AnswersItem({
   // Feel free to change this props names to what suits you best

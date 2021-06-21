@@ -1,49 +1,53 @@
-function DuckTime({ handleChange }) {
+function DuckTime({ handleChange, answerData }) {
   return (
     // <!-- This is a checkboxes group -->
     <ul>
       <li>
         <label>
           <input
-            name="bestFeatures"
+            name="time"
             type="checkbox"
-            value="colour"
+            value="swimming"
             onChange={handleChange}
+            checked={answerData.timeSpent.includes("swimming")}
           />
-          It's yellow!
+          Swimming{" "}
         </label>
       </li>
       <li>
         <label>
           <input
-            name="bestFeatures"
+            name="time"
             type="checkbox"
-            value="sound"
+            value="bathing"
             onChange={handleChange}
+            checked={answerData.timeSpent.includes("bathing")}
           />
-          It squeaks!
+          Bathing
         </label>
       </li>
       <li>
         <label>
           <input
-            name="bestFeatures"
+            name="time"
             type="checkbox"
-            value="logo"
+            value="chatting"
             onChange={handleChange}
+            checked={answerData.timeSpent.includes("chatting")}
           />
-          It has a logo!
+          Chatting
         </label>
       </li>
       <li>
         <label>
           <input
-            name="bestFeatures"
+            name="time"
             type="checkbox"
-            value="size"
+            value="noTime"
             onChange={handleChange}
+            checked={answerData.timeSpent.includes("noTime")}
           />
-          Its big!
+          I don't like to spend time with it
         </label>
       </li>
     </ul>

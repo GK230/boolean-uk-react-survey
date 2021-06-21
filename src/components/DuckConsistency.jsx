@@ -1,4 +1,4 @@
-function DuckConsistency({ handleChange }) {
+function DuckConsistency({ handleChange, answerData }) {
   return (
     // <!-- This is a radio buttons group -->
     <ul>
@@ -9,8 +9,9 @@ function DuckConsistency({ handleChange }) {
           name="consistency"
           value="1"
           onChange={handleChange}
+          checked={answerData.consistency === "1"}
         />
-        <label for="consistency1">1</label>
+        <label htmlFor="consistency1">1</label>
       </li>
       <li>
         <input
@@ -19,8 +20,9 @@ function DuckConsistency({ handleChange }) {
           name="consistency"
           value="2"
           onChange={handleChange}
+          checked={answerData.consistency === "2"}
         />
-        <label for="consistency2">2</label>
+        <label htmlFor="consistency2">2</label>
       </li>
       <li>
         <input
@@ -29,8 +31,9 @@ function DuckConsistency({ handleChange }) {
           name="consistency"
           value="3"
           onChange={handleChange}
+          checked={answerData.consistency === "3"}
         />
-        <label for="consistency3">3</label>
+        <label htmlFor="consistency3">3</label>
       </li>
       <li>
         <input
@@ -39,8 +42,9 @@ function DuckConsistency({ handleChange }) {
           name="consistency"
           value="4"
           onChange={handleChange}
+          checked={answerData.consistency === "4"}
         />
-        <label for="consistency4">4</label>
+        <label htmlFor="consistency4">4</label>
       </li>
     </ul>
   );

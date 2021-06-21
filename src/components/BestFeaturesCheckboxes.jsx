@@ -1,4 +1,4 @@
-function BestFeaturesCheckboxes({ handleChange }) {
+function BestFeaturesCheckboxes({ handleChange, answerData }) {
   return (
     <ul>
       <li>
@@ -8,6 +8,7 @@ function BestFeaturesCheckboxes({ handleChange }) {
             type="checkbox"
             value="colour"
             onChange={handleChange}
+            checked={answerData.bestFeatures.includes("color")}
           />
           It's yellow!
         </label>
@@ -19,6 +20,7 @@ function BestFeaturesCheckboxes({ handleChange }) {
             type="checkbox"
             value="sound"
             onChange={handleChange}
+            checked={answerData.bestFeatures.includes("sound")}
           />
           It squeaks!
         </label>
@@ -30,6 +32,7 @@ function BestFeaturesCheckboxes({ handleChange }) {
             type="checkbox"
             value="logo"
             onChange={handleChange}
+            checked={answerData.bestFeatures.includes("logo")}
           />
           It has a logo!
         </label>
@@ -41,6 +44,7 @@ function BestFeaturesCheckboxes({ handleChange }) {
             type="checkbox"
             value="size"
             onChange={handleChange}
+            checked={answerData.bestFeatures.includes("size")}
           />
           Its big!
         </label>

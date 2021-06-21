@@ -1,4 +1,4 @@
-function DuckLogo({ handleChange }) {
+function DuckLogo({ handleChange, answerData }) {
   return (
     // <!-- This is a radio buttons group -->
     <ul>
@@ -9,8 +9,10 @@ function DuckLogo({ handleChange }) {
           name="logo"
           value="1"
           onChange={handleChange}
+          checked={answerData.logo === "1"}
+
         />
-        <label for="logo1">1</label>
+        <label htmlFor="logo1">1</label>
       </li>
       <li>
         <input
@@ -19,8 +21,10 @@ function DuckLogo({ handleChange }) {
           name="logo"
           value="2"
           onChange={handleChange}
+          checked={answerData.logo === "2"}
+
         />
-        <label for="logo2">2</label>
+        <label htmlFor="logo2">2</label>
       </li>
       <li>
         <input
@@ -29,8 +33,10 @@ function DuckLogo({ handleChange }) {
           name="logo"
           value="3"
           onChange={handleChange}
+          checked={answerData.logo === "3"}
+
         />
-        <label for="logo3">3</label>
+        <label htmlFor="logo3">3</label>
       </li>
       <li>
         <input
@@ -39,8 +45,10 @@ function DuckLogo({ handleChange }) {
           name="logo"
           value="4"
           onChange={handleChange}
+          checked={answerData.logo === "4"}
+
         />
-        <label for="logo4">4</label>
+        <label htmlFor="logo4">4</label>
       </li>
     </ul>
   );

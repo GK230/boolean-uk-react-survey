@@ -18,7 +18,7 @@ const initialAnswerData = {
   worstFeatures: [],
 };
 
-function Form() {
+function Form({ addAnswer }) {
   const [answerData, setAnswerData] = useState(initialAnswerData);
 
   function handleSubmit(event) {
@@ -33,10 +33,21 @@ function Form() {
       ...answerData,
       [event.target.name]:
         event.target.type === "checkbox"
-          ? event.target.checked
+          ? handleCheckBox(event)
           : event.target.value,
     });
   }
+
+  function handleCheckBox(event) {
+    const updatedArray = event.target.checked
+      ? [...answerData[event.target.name], event.target.value]
+      : answerData[event.target.name].filter(
+          (feature) => feature !== event.target.value
+        );
+    return updatedArray;
+  }
+
+  console.log(answerData);
 
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -46,45 +57,68 @@ function Form() {
           What would you say that are the best features of your rubber duck?
         </h3>
         {/* <!-- checkboxes go here --> */}
-        <BestFeaturesCheckboxes handleChange={handleChange} />
+        <BestFeaturesCheckboxes
+          handleChange={handleChange}
+          answerData={answerData}
+        />
       </div>
       <div className="form__group">
         <h3>What would you say that are the worst bits of your rubber duck?</h3>
         {/* <!-- Checkboxes go here --> */}
-        <WorstFeaturesCheckboxes handleChange={handleChange} />
+        <WorstFeaturesCheckboxes
+          handleChange={handleChange}
+          answerData={answerData}
+        />
       </div>
       <div className="form__group radio">
         <h3>How do you rate your rubber duck consistency?</h3>
         {/* <!-- radio buttons go here --> */}
-        <DuckConsistency handleChange={handleChange} />
+        <DuckConsistency handleChange={handleChange} answerData={answerData} />
       </div>
       <div className="form__group radio">
         <h3>How do you rate your rubber duck colour?</h3>
         {/* <!-- Radio inputs go here --> */}
-        <DuckColour handleChange={handleChange} />
+        <DuckColour handleChange={handleChange} answerData={answerData} />
       </div>
       <div className="form__group radio">
         <h3>How do you rate your rubber duck logo?</h3>
         {/* <!-- radio inputs go here --> */}
-        <DuckLogo handleChange={handleChange} />
+        <DuckLogo handleChange={handleChange} answerData={answerData} />
       </div>
       <div className="form__group">
         <h3>How do you like to spend time with your rubber duck</h3>
         {/* <!-- checkboxes go here --> */}
-        <DuckTime handleChange={handleChange} />
+        <DuckTime handleChange={handleChange} answerData={answerData} />
       </div>
       <label>
         What else have you got to say about your rubber duck?
-        <textarea name="review" cols="30" rows="10" onChange={handleChange}>
-        </textarea>
+        <textarea
+          name="review"
+          cols="30"
+          rows="10"
+          onChange={handleChange}
+          answerData={answerData}
+        ></textarea>
       </label>
       <label>
         Put your name here (if you feel like it):
-        <input type="text" name="username" value="" onChange={handleChange} />
+        <input
+          type="text"
+          name="username"
+          value=""
+          onChange={handleChange}
+          answerData={answerData}
+        />
       </label>
       <label>
         Leave us your email pretty please??
-        <input type="email" name="email" value="" onChange={handleChange} />
+        <input
+          type="email"
+          name="email"
+          value=""
+          onChange={handleChange}
+          answerData={answerData}
+        />
       </label>
       <input className="form__submit" type="submit" value="Submit Survey!" />
     </form>

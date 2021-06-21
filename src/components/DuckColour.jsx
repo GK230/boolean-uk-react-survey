@@ -1,4 +1,4 @@
-function DuckColour({ handleChange }) {
+function DuckColour({ handleChange, answerData }) {
   return (
     // <!-- This is a radio buttons group -->
     <ul>
@@ -9,8 +9,9 @@ function DuckColour({ handleChange }) {
           name="color"
           value="1"
           onChange={handleChange}
+          checked={answerData.color === "1"}
         />
-        <label for="color1">1</label>
+        <label htmlFor="color1">1</label>
       </li>
       <li>
         <input
@@ -19,8 +20,9 @@ function DuckColour({ handleChange }) {
           name="color"
           value="2"
           onChange={handleChange}
+          checked={answerData.color === "2"}
         />
-        <label for="color2">2</label>
+        <label htmlFor="color2">2</label>
       </li>
       <li>
         <input
@@ -29,8 +31,9 @@ function DuckColour({ handleChange }) {
           name="color"
           value="3"
           onChange={handleChange}
+          checked={answerData.color === "3"}
         />
-        <label for="color3">3</label>
+        <label htmlFor="color3">3</label>
       </li>
       <li>
         <input
@@ -39,8 +42,9 @@ function DuckColour({ handleChange }) {
           name="color"
           value="4"
           onChange={handleChange}
+          checked={answerData.color === "4"}
         />
-        <label for="color4">4</label>
+        <label htmlFor="color4">4</label>
       </li>
     </ul>
   );
